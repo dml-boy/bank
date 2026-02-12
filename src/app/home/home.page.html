@@ -1,0 +1,62 @@
+<ion-content [fullscreen]="true" class="ion-padding">
+  <!-- Header Section -->
+  <div class="header-container">
+    <div class="user-info">
+      <ion-avatar>
+        <img src="https://i.pravatar.cc/150?u=sophia" alt="User Avatar" />
+      </ion-avatar>
+      <div class="welcome-text">
+        <p>Welcome back</p>
+        <h2>Sophia Calzoni</h2>
+      </div>
+    </div>
+    <div class="notification-btn">
+      <ion-icon name="notifications-outline"></ion-icon>
+      <div class="dot"></div>
+    </div>
+  </div>
+
+  <!-- Card Slider Section -->
+  <div class="card-slider">
+    <div class="cards-wrapper">
+      <div *ngFor="let card of cards" [class]="'bank-card ' + card.class">
+        <div class="card-top">
+          <span class="card-type">{{ card.type }}</span>
+          <span class="card-brand">{{ card.brand }}</span>
+        </div>
+        <div class="card-balance-section">
+          <div class="card-balance-label">Balance</div>
+          <div class="card-balance">{{ card.balance }}</div>
+        </div>
+        <div class="card-footer">
+          <span class="card-number">**** {{ card.number }}</span>
+          <span class="card-expiry">{{ card.expiry }}</span>
+        </div>
+      </div>
+    </div>
+    <!-- Pagination Indicator -->
+    <div class="pagination">
+      <div class="dot active"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+  </div>
+
+  <!-- Quick Actions Grid -->
+  <ion-grid class="actions-grid">
+    <ion-row>
+      <ion-col size="6" *ngFor="let action of actions">
+        <ion-card class="action-card" (click)="goToPage(action.name)" button="true">
+          <ion-card-content>
+            <div class="action-icon-wrapper">
+              <ion-icon [name]="action.icon"></ion-icon>
+            </div>
+            <h3>{{ action.name }}</h3>
+            <p>{{ action.sub }}</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

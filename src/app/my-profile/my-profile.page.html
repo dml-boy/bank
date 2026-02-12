@@ -1,0 +1,73 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()" class="header-btn">
+        <ion-icon name="chevron-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>My Profile</ion-title>
+    <ion-buttons slot="end" *ngIf="!isEditMode">
+      <ion-button (click)="toggleEditMode()" class="header-btn">
+        <ion-icon name="createOutline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="profile-container" [class.edit-mode]="isEditMode">
+    <!-- Profile Avatar -->
+    <div class="avatar-section">
+      <div class="avatar-wrapper">
+        <div class="avatar-img">
+          <img [src]="profile.image" alt="Profile" />
+        </div>
+        <div class="camera-badge" *ngIf="isEditMode" (click)="uploadPhoto()">
+          <ion-icon name="cameraOutline"></ion-icon>
+        </div>
+      </div>
+    </div>
+
+    <!-- Profile Information Section -->
+    <div class="info-list">
+      <div class="info-item">
+        <label class="item-label">Full Name</label>
+        <div class="item-value" *ngIf="!isEditMode">{{ profile.name }}</div>
+        <div class="custom-input" *ngIf="isEditMode">
+          <ion-input type="text" [(ngModel)]="profile.name"></ion-input>
+        </div>
+      </div>
+
+      <div class="info-item">
+        <label class="item-label">Email</label>
+        <div class="item-value" *ngIf="!isEditMode">{{ profile.email }}</div>
+        <div class="custom-input" *ngIf="isEditMode">
+          <ion-input type="email" [(ngModel)]="profile.email"></ion-input>
+        </div>
+      </div>
+
+      <div class="info-item">
+        <label class="item-label">Phone Number</label>
+        <div class="item-value" *ngIf="!isEditMode">{{ profile.phone }}</div>
+        <div class="custom-input" *ngIf="isEditMode">
+          <ion-input type="tel" [(ngModel)]="profile.phone"></ion-input>
+        </div>
+      </div>
+
+      <div class="info-item" [class.no-border]="!isEditMode">
+        <label class="item-label">Address</label>
+        <div class="item-value addr-text" *ngIf="!isEditMode">{{ profile.address }}</div>
+        <div class="custom-input" *ngIf="isEditMode">
+          <ion-textarea [autoGrow]="true" [(ngModel)]="profile.address"></ion-textarea>
+        </div>
+      </div>
+    </div>
+
+    <!-- Save Button (Only in edit mode) -->
+    <div class="action-footer" *ngIf="isEditMode">
+      <ion-button expand="block" class="primary-btn" (click)="saveChanges()">
+        Save Change
+      </ion-button>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,55 @@
+<div class="modal-container">
+  <div class="modal-box">
+    <div class="box-header">
+      <div class="dismiss-btn" (click)="dismiss()">
+        <ion-icon name="close"></ion-icon>
+      </div>
+    </div>
+
+    <!-- Amount Entry Section -->
+    <div class="amount-entry-section">
+      <div class="currency-picker">
+        <div class="currency-chip">
+          <span class="symbol-box">$</span>
+          <span class="code">USD</span>
+          <ion-icon name="chevron-down"></ion-icon>
+        </div>
+      </div>
+      <div class="amount-text-wrapper">
+        <span class="amount-value">$154</span>
+        <span class="decimal-value">,42</span>
+      </div>
+    </div>
+
+    <!-- Numeric Keypad -->
+    <div class="numeric-keypad">
+      <div class="keypad-row">
+        <button class="key-btn" (click)="pressKey('7')">7</button>
+        <button class="key-btn" (click)="pressKey('8')">8</button>
+        <button class="key-btn" (click)="pressKey('9')">9</button>
+      </div>
+      <div class="keypad-row">
+        <button class="key-btn" (click)="pressKey('4')">4</button>
+        <button class="key-btn" (click)="pressKey('5')">5</button>
+        <button class="key-btn" (click)="pressKey('6')">6</button>
+      </div>
+      <div class="keypad-row">
+        <button class="key-btn" (click)="pressKey('3')">3</button>
+        <button class="key-btn" (click)="pressKey('2')">2</button>
+        <button class="key-btn" (click)="pressKey('1')">1</button>
+      </div>
+      <div class="keypad-row">
+        <button class="key-btn" (click)="pressKey(',')">,</button>
+        <button class="key-btn" (click)="pressKey('0')">0</button>
+        <button class="key-btn" (click)="pressKey('.')">.</button>
+      </div>
+    </div>
+
+    <!-- Footer Action -->
+    <div class="footer-action">
+      <ion-button expand="block" (click)="continue()" class="primary-btn">
+        Continue
+      </ion-button>
+    </div>
+  </div>
+</div>

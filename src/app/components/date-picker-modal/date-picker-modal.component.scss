@@ -1,0 +1,77 @@
+.modal-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 1.5rem;
+
+  .modal-card {
+    background: #fff;
+    border-radius: 1.5rem;
+    width: 100%;
+    max-width: 22rem;
+    padding: 2.5rem 1rem 1.5rem;
+    position: relative;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.15);
+
+    .close-btn {
+      position: absolute;
+      top: 1rem;
+      right: 1.25rem;
+      width: 2.2rem;
+      height: 2.2rem;
+      background: #f8fafc;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 10;
+
+      ion-icon {
+        font-size: 1.2rem;
+        color: #1e293b;
+      }
+    }
+
+    .content {
+      ion-datetime {
+        --background: #fff;
+        --color: #1e293b;
+        border-radius: 1rem;
+        margin-bottom: 1.5rem;
+        width: 100%;
+
+        &::part(calendar-day active) {
+          background: #4d3e5e;
+          color: #fff;
+        }
+
+        &::part(calendar-day) {
+          font-weight: 500;
+        }
+
+        &::part(header) {
+          display: none;
+        }
+      }
+
+      .actions {
+        padding: 0 0.5rem;
+        
+        .confirm-btn {
+          --background: #4d3e5e;
+          --color: #fff;
+          --border-radius: 0.75rem;
+          --padding-top: 1.25rem;
+          --padding-bottom: 1.25rem;
+          font-size: 1rem;
+          font-weight: 600;
+          text-transform: none;
+          height: 3.5rem;
+        }
+      }
+    }
+  }
+}

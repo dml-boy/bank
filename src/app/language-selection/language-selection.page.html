@@ -1,0 +1,54 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()" class="header-btn">
+        <ion-icon name="chevron-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title mode="md">Language</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="language-container">
+    <div class="section-title">Suggested Languages</div>
+    <ion-list lines="full">
+      <ion-item button (click)="selectLanguage('en-uk')">
+        <ion-label>English (UK)</ion-label>
+        <ion-icon slot="end" name="checkmark-outline" class="check-icon" *ngIf="selectedLanguage === 'en-uk'"></ion-icon>
+      </ion-item>
+      <ion-item button (click)="selectLanguage('en')">
+        <ion-label>English</ion-label>
+        <ion-icon slot="end" name="checkmark-outline" class="check-icon" *ngIf="selectedLanguage === 'en'"></ion-icon>
+      </ion-item>
+      <ion-item button (click)="selectLanguage('id')">
+        <ion-label>Bahasa Indonesia</ion-label>
+        <ion-icon slot="end" name="checkmark-outline" class="check-icon" *ngIf="selectedLanguage === 'id'"></ion-icon>
+      </ion-item>
+    </ion-list>
+
+    <div class="section-title mt-2">Other Languages</div>
+    <ion-list lines="full">
+      <ion-item button (click)="selectLanguage('zh')">
+        <ion-label>Chinese</ion-label>
+        <ion-icon slot="end" name="checkmark-outline" class="check-icon" *ngIf="selectedLanguage === 'zh'"></ion-icon>
+      </ion-item>
+      <ion-item button (click)="selectLanguage('hr')">
+        <ion-label>Croatian</ion-label>
+        <ion-icon slot="end" name="checkmark-outline" class="check-icon" *ngIf="selectedLanguage === 'hr'"></ion-icon>
+      </ion-item>
+      <ion-item button (click)="selectLanguage('cs')">
+        <ion-label>Czech</ion-label>
+        <ion-icon slot="end" name="checkmark-outline" class="check-icon" *ngIf="selectedLanguage === 'cs'"></ion-icon>
+      </ion-item>
+      <ion-item button (click)="selectLanguage('da')">
+        <ion-label>Danish</ion-label>
+        <ion-icon slot="end" name="checkmark-outline" class="check-icon" *ngIf="selectedLanguage === 'da'"></ion-icon>
+      </ion-item>
+      <ion-item button (click)="selectLanguage('fil')">
+        <ion-label>Filipino</ion-label>
+        <ion-icon slot="end" name="checkmark-outline" class="check-icon" *ngIf="selectedLanguage === 'fil'"></ion-icon>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

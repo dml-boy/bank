@@ -1,0 +1,63 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()" class="header-btn">
+        <ion-icon name="chevron-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Send money</ion-title>
+    <ion-buttons slot="end">
+      <ion-button class="add-btn">
+        <ion-icon name="add"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <!-- Search Bar -->
+  <div class="search-container">
+    <ion-searchbar 
+      placeholder="Search contact..." 
+      [(ngModel)]="searchQuery" 
+      (ionInput)="filterContacts()"
+      mode="ios"
+      class="custom-search"
+    ></ion-searchbar>
+  </div>
+
+  <!-- Category Segments -->
+  <ion-segment (ionChange)="onSegmentChange($event)" [(ngModel)]="selectedSegment" mode="ios" class="custom-segment">
+    <ion-segment-button value="all">
+      <ion-label>All</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="favorite">
+      <ion-label>Favorite</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="bank">
+      <ion-label>Bank</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="e-wallet">
+      <ion-label>e-Wallet</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <!-- Contact List -->
+  <ion-list lines="none" class="contact-list">
+    <ion-item *ngFor="let contact of filteredContacts" (click)="selectContact(contact)" button detail="false">
+      <ion-avatar slot="start">
+        <img [src]="contact.image" [alt]="contact.name" />
+      </ion-avatar>
+      <ion-label>
+        <h2>{{ contact.name }}</h2>
+        <p>{{ contact.bank }} • {{ contact.account }} ****</p>
+      </ion-label>
+      <ion-icon 
+        slot="end" 
+        [name]="contact.favorite ? 'star' : 'star-outline'" 
+        [class.is-favorite]="contact.favorite"
+        (click)="toggleFavorite($event, contact)"
+      ></ion-icon>
+    </ion-item>
+  </ion-list>
+</ion-content>

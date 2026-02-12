@@ -1,0 +1,92 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import "@ionic/angular/css/display.css";
+
+/* Optional CSS utils that can be commented out */
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+
+// Global modal styles
+.pay-bill-modal,
+.transfer-confirm-modal,
+.transfer-success-modal,
+.reload-amount-modal,
+.reload-success-modal,
+.request-success-modal,
+.total-transfer-modal {
+  --background: rgba(0, 0, 0, 0.5);
+  
+  ion-backdrop {
+    opacity: 0.5;
+  }
+}
+
+.pay-bill-modal,
+.reload-amount-modal {
+  --height: auto;
+  --border-radius: 2rem 2rem 0 0;
+  align-items: flex-end;
+}
+
+.transfer-confirm-modal,
+.transfer-success-modal,
+.reload-success-modal,
+.request-success-modal,
+.total-transfer-modal {
+  --width: 90%;
+  --max-width: 28rem;
+  --height: auto;
+  --border-radius: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+/**
+ * Ionic Dark Mode
+ * -----------------------------------------------------
+ * For more info, please see:
+ * https://ionicframework.com/docs/theming/dark-mode
+ */
+
+/* @import "@ionic/angular/css/palettes/dark.always.css"; */
+/* @import "@ionic/angular/css/palettes/dark.class.css"; */
+// Global header button styles
+.header-btn {
+  --background: #fff;
+  --color: #1c1c1e;
+  --border-radius: 1rem;
+  --padding-start: 0;
+  --padding-end: 0;
+  width: 3.5rem;
+  height: 3.5rem;
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.03);
+  border: 1px solid #f5f5f5;
+  margin: 0.5rem;
+
+  ion-icon {
+    font-size: 1.4rem;
+  }
+
+  &:hover {
+    --background: #f8f8f8;
+  }
+}

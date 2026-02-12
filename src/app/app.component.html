@@ -1,0 +1,11 @@
+<ion-app>
+  <!-- Global Splash Screen Overlay -->
+  <div class="global-splash" *ngIf="showSplash">
+    <div class="logo-wrapper">
+      <img src="../../assets/logo-white.png" alt="Logo" class="logo" />
+      <h1>Bänkee</h1>
+    </div>
+  </div>
+
+  <ion-router-outlet [class.hidden-content]="showSplash"></ion-router-outlet>
+</ion-app>

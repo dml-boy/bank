@@ -1,0 +1,47 @@
+.modal-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 1.5rem;
+}
+
+.content-box {
+  background: #fff;
+  border-radius: 2rem;
+  padding: 2.5rem 2rem;
+  max-width: 26rem;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+
+  .image-wrapper {
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+
+    img {
+      width: 100%;
+      max-width: 16rem;
+      height: auto;
+    }
+  }
+
+  .subtitle-text {
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: #1e293b;
+    margin: 0 0 2.5rem;
+    line-height: 1.5;
+  }
+
+  .action-btn {
+    --background: #4d3e5e;
+    --border-radius: 0.75rem;
+    --height: 4rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: none;
+    margin: 0;
+  }
+}

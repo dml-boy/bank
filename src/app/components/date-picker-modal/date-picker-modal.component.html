@@ -1,0 +1,22 @@
+<div class="modal-wrapper">
+  <div class="modal-card">
+    <div class="close-btn" (click)="dismiss()">
+      <ion-icon name="close-outline"></ion-icon>
+    </div>
+
+    <div class="content">
+      <ion-datetime 
+        mode="md" 
+        presentation="date"
+        [(ngModel)]="selectedDate"
+        (ionChange)="onDateChange($event)">
+      </ion-datetime>
+      
+      <div class="actions">
+        <ion-button expand="block" class="confirm-btn" (click)="confirm()">
+          Select Date
+        </ion-button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,154 @@
+ion-header {
+  ion-toolbar {
+    --background: #fff;
+    --color: #1a2c42;
+    --padding-top: 1.5rem;
+    --padding-bottom: 0.5rem;
+
+    ion-title {
+      font-weight: 700;
+      font-size: 1.5rem;
+      text-align: center;
+    }
+
+    .header-btn {
+      margin-left: 1rem;
+    }
+
+    .header-menu-btn {
+      margin-right: 1rem;
+      width: 3.5rem;
+      height: 3.5rem;
+      background: #fff;
+      border-radius: 1rem;
+      border: 1px solid #f5f5f5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.03);
+
+      ion-icon {
+        font-size: 1.4rem;
+        color: #1a2c42;
+      }
+    }
+  }
+}
+
+ion-content {
+  --background: #fff;
+}
+
+.search-container {
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+
+  .custom-search {
+    --background: #f8f9fc;
+    --border-radius: 1.5rem;
+    --placeholder-color: #b5b5b5;
+    --placeholder-opacity: 0.8;
+    padding: 0;
+    border: 1.5px solid #f2f2f5;
+  }
+}
+
+.add-contact-btn {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem;
+  background: #f8f9fc;
+  border-radius: 1.5rem;
+  margin-bottom: 2rem;
+  cursor: pointer;
+  border: 1.5px solid #f2f2f5;
+
+  .add-icon {
+    width: 3rem;
+    height: 3rem;
+    background: #e8e9f0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    ion-icon {
+      font-size: 1.8rem;
+      color: #1a2c42;
+    }
+  }
+
+  span {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #1a2c42;
+  }
+}
+
+.contacts-list {
+  .contact-group {
+    margin-bottom: 2rem;
+
+    .group-header {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: #1a2c42;
+      margin-bottom: 1rem;
+      padding-left: 0.5rem;
+    }
+
+    ion-list {
+      background: transparent;
+      padding: 0;
+
+      ion-item {
+        --background: transparent;
+        --padding-start: 0;
+        --padding-end: 0;
+        --inner-padding-end: 0;
+        margin-bottom: 1.5rem;
+
+        ion-avatar {
+          width: 4rem;
+          height: 4rem;
+          margin-right: 1.25rem;
+          position: relative;
+
+          .verified-badge {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 1.4rem;
+            height: 1.4rem;
+            background: #4c3f5e;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            ion-icon {
+              font-size: 0.8rem;
+              color: #fff;
+            }
+          }
+        }
+
+        ion-label {
+          h2 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #1a2c42;
+            margin-bottom: 0.4rem;
+          }
+          p {
+            font-size: 1rem;
+            color: #8c97ab;
+          }
+        }
+      }
+    }
+  }
+}

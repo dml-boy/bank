@@ -1,0 +1,111 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()" class="header-btn">
+        <ion-icon name="chevron-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title mode="md">Reload</ion-title>
+    <ion-buttons slot="end">
+      <ion-button class="header-btn">
+        <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="stats-container">
+    <!-- Filter Section -->
+    <div class="filter-row">
+      <div class="date-range">February 28 - March 28, 2020</div>
+      <div class="filter-dropdown">
+        <span>Monthly</span>
+        <ion-icon name="chevron-down-outline"></ion-icon>
+      </div>
+    </div>
+
+    <!-- Chart Section -->
+    <div class="chart-container">
+      <div class="chart-y-axis">
+        <span>8k</span>
+        <span>6k</span>
+        <span>4k</span>
+        <span>2k</span>
+        <span>0</span>
+      </div>
+      <div class="chart-bars">
+        <div class="bar-group">
+          <div class="bars">
+            <div class="bar light" style="height: 60%;"></div>
+            <div class="bar dark" style="height: 40%;"></div>
+          </div>
+          <span class="bar-label">Jan</span>
+        </div>
+        <div class="bar-group">
+          <div class="bars">
+            <div class="bar light" style="height: 75%;"></div>
+            <div class="bar dark" style="height: 50%;"></div>
+          </div>
+          <span class="bar-label">Feb</span>
+        </div>
+        <div class="bar-group">
+          <div class="bars">
+            <div class="bar light" style="height: 35%;"></div>
+            <div class="bar dark" style="height: 50%;"></div>
+          </div>
+          <span class="bar-label">Mar</span>
+        </div>
+        <div class="bar-group">
+          <div class="bars">
+            <div class="bar light" style="height: 65%;"></div>
+            <div class="bar dark" style="height: 30%;"></div>
+          </div>
+          <span class="bar-label">Apr</span>
+        </div>
+        <div class="bar-group">
+          <div class="bars">
+            <div class="bar light" style="height: 70%;"></div>
+            <div class="bar dark" style="height: 55%;"></div>
+          </div>
+          <span class="bar-label">May</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Summary Cards -->
+    <div class="summary-cards">
+      <div class="summary-card income">
+        <div class="icon-wrapper">
+          <ion-icon name="download-outline"></ion-icon>
+        </div>
+        <div class="card-amount">$6.564,34</div>
+        <div class="card-label">Income</div>
+      </div>
+      <div class="summary-card outcome">
+        <div class="icon-wrapper">
+          <ion-icon name="share-outline"></ion-icon>
+        </div>
+        <div class="card-amount">$4.764,35</div>
+        <div class="card-label">Outcome</div>
+      </div>
+    </div>
+
+    <!-- Recent Transactions Section -->
+    <div class="recent-transactions">
+      <h2 class="section-title">Recent transaction</h2>
+      <div class="transaction-list">
+        <div class="transaction-item" *ngFor="let tx of transactions">
+          <ion-avatar slot="start">
+            <img [src]="tx.image" [alt]="tx.name" />
+          </ion-avatar>
+          <div class="transaction-info">
+            <h3>{{ tx.name }}</h3>
+            <p>{{ tx.bank }}</p>
+          </div>
+          <div class="transaction-amount">{{ tx.amount }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

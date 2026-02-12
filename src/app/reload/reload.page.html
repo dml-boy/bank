@@ -1,0 +1,74 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()" class="header-btn">
+        <ion-icon name="chevron-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title mode="md">Reload</ion-title>
+    <ion-buttons slot="end">
+      <div class="header-menu-btn">
+        <ion-icon name="ellipsis-horizontal"></ion-icon>
+      </div>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <!-- Provider Logo -->
+  <div class="provider-section">
+    <div class="provider-logo">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/U_Mobile_logo.svg/1200px-U_Mobile_logo.svg.png" alt="u-mobile" />
+    </div>
+  </div>
+
+  <!-- Phone Number Input -->
+  <div class="input-section">
+    <h3 class="section-title">Phone Number</h3>
+    <div class="custom-input">
+      <ion-input 
+        [(ngModel)]="phoneNumber" 
+        type="tel" 
+        placeholder="Enter phone number..." 
+        mode="md"
+      ></ion-input>
+    </div>
+  </div>
+
+  <!-- All Contact Section -->
+  <div class="contact-section">
+    <h3 class="section-title">All Contact</h3>
+    
+    <!-- Search Bar -->
+    <div class="search-container">
+      <ion-searchbar 
+        [(ngModel)]="searchQuery" 
+        (ionInput)="onSearchChange()"
+        placeholder="Search contact..." 
+        mode="ios"
+        class="custom-search"
+      ></ion-searchbar>
+    </div>
+
+    <!-- Grouped Contacts List -->
+    <div class="contacts-list">
+      <div *ngFor="let letter of groupedContacts | keyvalue" class="contact-group">
+        <div class="group-header">{{ letter.key }}</div>
+        <ion-list lines="none">
+          <ion-item *ngFor="let contact of letter.value" (click)="selectContact(contact)" button detail="false">
+            <ion-avatar slot="start">
+              <img [src]="contact.image" [alt]="contact.name" />
+              <div class="verified-badge" *ngIf="contact.verified">
+                <ion-icon name="checkmark"></ion-icon>
+              </div>
+            </ion-avatar>
+            <ion-label>
+              <h2>{{ contact.name }}</h2>
+              <p>{{ contact.bank }} • {{ contact.account }}</p>
+            </ion-label>
+          </ion-item>
+        </ion-list>
+      </div>
+    </div>
+  </div>
+</ion-content>

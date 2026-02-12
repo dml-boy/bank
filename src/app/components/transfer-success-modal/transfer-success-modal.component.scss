@@ -1,0 +1,45 @@
+.modal-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+.modal-content {
+  background: #fff;
+  border-radius: 2rem;
+  padding: 3rem 2.5rem;
+  max-width: 28rem;
+  width: 100%;
+  text-align: center;
+
+  .illustration {
+    margin-bottom: 2.5rem;
+
+    img {
+      width: 100%;
+      max-width: 20rem;
+      height: auto;
+    }
+  }
+
+  .success-message {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #8c97ab;
+    margin: 0 0 3rem;
+    line-height: 1.6;
+  }
+
+  .continue-btn {
+    --background: #4c3f5e;
+    --border-radius: 1rem;
+    --height: 4rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-transform: none;
+    width: 100%;
+    margin: 0;
+  }
+}

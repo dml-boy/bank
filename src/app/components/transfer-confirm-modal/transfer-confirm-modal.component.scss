@@ -1,0 +1,128 @@
+.modal-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+.modal-content {
+  background: #fff;
+  border-radius: 2rem;
+  padding: 2.5rem;
+  max-width: 28rem;
+  width: 100%;
+
+  .icon-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+
+    .transfer-icon {
+      width: 5rem;
+      height: 5rem;
+      background: #e8e9f0;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      ion-icon {
+        font-size: 2.5rem;
+        color: #1a2c42;
+      }
+    }
+  }
+
+  .modal-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #8c97ab;
+    text-align: center;
+    margin: 0 0 0.5rem;
+  }
+
+  .amount {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #1a2c42;
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+
+  .transfer-details {
+    h3 {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: #1a2c42;
+      margin: 0 0 1.5rem;
+    }
+
+    .detail-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.25rem;
+
+      .label {
+        font-size: 1.05rem;
+        color: #8c97ab;
+        font-weight: 500;
+      }
+
+      .value {
+        font-size: 1.05rem;
+        color: #1a2c42;
+        font-weight: 600;
+        text-align: right;
+      }
+
+      .badge {
+        background: #4c3f5e;
+        color: #fff;
+        padding: 0.4rem 1rem;
+        border-radius: 0.75rem;
+        font-size: 0.95rem;
+        font-weight: 600;
+      }
+
+      &.total {
+        .label, .value {
+          font-weight: 700;
+          color: #1a2c42;
+        }
+      }
+    }
+
+    .divider {
+      height: 1px;
+      background: #f2f2f5;
+      margin: 1.5rem 0;
+    }
+  }
+
+  .action-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2.5rem;
+
+    ion-button {
+      flex: 1;
+      --border-radius: 1rem;
+      --height: 4rem;
+      font-size: 1.2rem;
+      font-weight: 700;
+      text-transform: none;
+      margin: 0;
+    }
+
+    .cancel-btn {
+      --color: #1a2c42;
+      font-weight: 600;
+    }
+
+    .confirm-btn {
+      --background: #4c3f5e;
+    }
+  }
+}

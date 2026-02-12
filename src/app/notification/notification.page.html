@@ -1,0 +1,49 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()" class="header-btn">
+        <ion-icon name="chevron-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Notification</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="notification-container">
+    <h3 class="section-title">Set your notification</h3>
+
+    <div class="settings-list">
+      <!-- Main Toggle -->
+      <div class="setting-item toggle-item">
+        <div class="item-left">
+          <ion-icon name="notifications-outline" class="item-icon main-icon"></ion-icon>
+          <span class="item-text">Show Notifications</span>
+        </div>
+        <ion-toggle [(ngModel)]="showNotifications" mode="ios"></ion-toggle>
+      </div>
+
+      <!-- Categories -->
+      <div class="setting-item clickable">
+        <div class="item-left">
+          <ion-icon name="trending-up-outline" class="item-icon"></ion-icon>
+          <span class="item-text">Financial Activity</span>
+        </div>
+      </div>
+
+      <div class="setting-item clickable">
+        <div class="item-left">
+          <ion-icon name="trending-down-outline" class="item-icon"></ion-icon>
+          <span class="item-text">Non-financial Activity</span>
+        </div>
+      </div>
+
+      <div class="setting-item clickable no-border">
+        <div class="item-left">
+          <ion-icon name="shield-checkmark-outline" class="item-icon"></ion-icon>
+          <span class="item-text">Security</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

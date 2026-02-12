@@ -1,0 +1,94 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()" class="header-btn">
+        <ion-icon name="chevron-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="profile-container">
+    <!-- User Info Section -->
+    <div class="user-section">
+      <div class="avatar-wrapper">
+        <img [src]="profile.image" alt="Profile" />
+      </div>
+      <div class="user-meta">
+        <h2 class="name">{{ profile.name }}</h2>
+        <p class="handle">@{{ profile.username }}</p>
+      </div>
+    </div>
+
+    <!-- Setting Sections -->
+    <div class="settings-group">
+      <h3 class="group-title">Personal Info</h3>
+      <div class="setting-item clickable" (click)="navigateTo('profile')">
+        <div class="item-left">
+          <ion-icon name="person-outline"></ion-icon>
+          <span class="label">Your Profile</span>
+        </div>
+      </div>
+      <div class="setting-item clickable" (click)="navigateTo('history')">
+        <div class="item-left">
+          <ion-icon name="download-outline"></ion-icon>
+          <span class="label">History Transaction</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="settings-group">
+      <h3 class="group-title">Security</h3>
+      <div class="setting-item">
+        <div class="item-left">
+          <ion-icon name="scan-outline"></ion-icon>
+          <span class="label">Face Id</span>
+        </div>
+        <ion-toggle [(ngModel)]="faceIdEnabled" mode="ios"></ion-toggle>
+      </div>
+      <div class="setting-item clickable" (click)="navigateTo('change-password')">
+        <div class="item-left">
+          <ion-icon name="lock-closed-outline"></ion-icon>
+          <span class="label">Change Password</span>
+        </div>
+      </div>
+      <div class="setting-item clickable" (click)="navigateTo('forgot-password')">
+        <div class="item-left">
+          <ion-icon name="lock-closed-outline"></ion-icon>
+          <span class="label">Forgot Password</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="settings-group">
+      <h3 class="group-title">General</h3>
+      <div class="setting-item clickable" (click)="navigateTo('notification')">
+        <div class="item-left">
+          <ion-icon name="notifications-outline"></ion-icon>
+          <span class="label">Notification</span>
+        </div>
+      </div>
+      <div class="setting-item clickable" (click)="navigateTo('languages')">
+        <div class="item-left">
+          <ion-icon name="globe-outline"></ion-icon>
+          <span class="label">Languages</span>
+        </div>
+      </div>
+      <div class="setting-item clickable no-border" (click)="navigateTo('help')">
+        <div class="item-left">
+          <ion-icon name="help-circle-outline"></ion-icon>
+          <span class="label">Help and Support</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Logout Action -->
+    <div class="action-footer">
+      <ion-button fill="clear" (click)="logout()" class="logout-link">
+        Logout
+      </ion-button>
+    </div>
+  </div>
+</ion-content>

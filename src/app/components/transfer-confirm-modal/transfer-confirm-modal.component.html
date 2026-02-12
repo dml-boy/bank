@@ -1,0 +1,52 @@
+<div class="modal-wrapper">
+  <div class="modal-content">
+    <div class="icon-wrapper">
+      <div class="transfer-icon">
+        <ion-icon name="arrow-up-outline"></ion-icon>
+      </div>
+    </div>
+
+    <h2 class="modal-title">Total transfer</h2>
+    <div class="amount">${{ transferData.amount }}</div>
+
+    <div class="transfer-details">
+      <h3>Transfer detail</h3>
+      
+      <div class="detail-row">
+        <span class="label">From</span>
+        <span class="value">{{ transferData.from }}</span>
+      </div>
+
+      <div class="detail-row">
+        <span class="label">To</span>
+        <span class="value">{{ transferData.to }}</span>
+      </div>
+
+      <div class="detail-row">
+        <span class="label">Transfer</span>
+        <span class="value">${{ transferData.amount }}</span>
+      </div>
+
+      <div class="detail-row">
+        <span class="label">Admin fee</span>
+        <span class="badge">{{ transferData.adminFee }}</span>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="detail-row total">
+        <span class="label">Total transfer</span>
+        <span class="value">${{ transferData.amount }}</span>
+      </div>
+    </div>
+
+    <div class="action-buttons">
+      <ion-button fill="clear" (click)="cancel()" class="cancel-btn">
+        Cancel
+      </ion-button>
+      <ion-button (click)="confirm()" class="confirm-btn">
+        Confirm
+      </ion-button>
+    </div>
+  </div>
+</div>

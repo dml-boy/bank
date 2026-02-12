@@ -1,0 +1,58 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()" class="header-btn">
+        <ion-icon name="chevron-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Send money</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <!-- Recipient Profile -->
+  <div class="recipient-profile">
+    <ion-avatar>
+      <img [src]="contact.image" [alt]="contact.name" />
+    </ion-avatar>
+    <h2>{{ contact.name }}</h2>
+    <p>{{ contact.bank }} • {{ contact.account }}</p>
+  </div>
+
+  <!-- Amount Input Section -->
+  <div class="input-section">
+    <ion-label class="section-label">Amount:</ion-label>
+    <div class="amount-card">
+      <div class="currency-selector">
+        <div class="currency-icon">S</div>
+        <ion-select [(ngModel)]="currency" interface="popover" mode="md" toggleIcon="chevron-down-outline">
+          <ion-select-option value="USD">USD</ion-select-option>
+          <ion-select-option value="EUR">EUR</ion-select-option>
+          <ion-select-option value="GBP">GBP</ion-select-option>
+        </ion-select>
+      </div>
+      <div class="amount-input-wrapper">
+        <span class="currency-symbol">$</span>
+        <ion-input [(ngModel)]="amount" type="text" placeholder="0,00" class="main-amount"></ion-input>
+      </div>
+    </div>
+  </div>
+
+  <!-- Message Section -->
+  <div class="input-section">
+    <ion-label class="section-label">Message</ion-label>
+    <ion-textarea 
+      [(ngModel)]="message" 
+      placeholder="Thank you for your cooperation :)" 
+      rows="6"
+      class="custom-textarea"
+    ></ion-textarea>
+  </div>
+
+  <!-- Action Button -->
+  <div class="button-container">
+    <ion-button expand="block" (click)="sendMoney()" class="primary-btn">
+      Send Money
+    </ion-button>
+  </div>
+</ion-content>

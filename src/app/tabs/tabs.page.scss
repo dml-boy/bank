@@ -1,0 +1,102 @@
+ion-tab-bar {
+  --background: #fff;
+  --border: none;
+  height: 6.5rem;
+  border-top-left-radius: 2.5rem;
+  border-top-right-radius: 2.5rem;
+  box-shadow: 0 -0.5rem 2rem rgba(0, 0, 0, 0.04);
+  padding: 0 0.5rem;
+  overflow: visible;
+  position: relative;
+  contain: none;
+}
+
+ion-tab-button {
+  --color: #b5b5b5;
+  --color-selected: #1c1c1e;
+  background: transparent;
+  transition: all 0.3s ease;
+
+  ion-icon {
+    font-size: 1.8rem;
+    margin-bottom: 0.4rem;
+  }
+
+  ion-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+
+  .active-icon {
+    display: none;
+  }
+
+  &.tab-selected {
+    .inactive-icon {
+      display: none;
+    }
+    .active-icon {
+      display: block;
+    }
+  }
+}
+
+.fab-tab-placeholder {
+  width: 5rem;
+  height: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fab-button-container {
+  position: absolute;
+  top: -2.2rem;
+  width: 5rem;
+  height: 5rem;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  cursor: pointer;
+
+  .fab-inner {
+    width: 4.4rem;
+    height: 4.4rem;
+    background: #4b3e6e;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0.4rem solid #fdfdfd;
+    box-shadow: 0 0.5rem 1.5rem rgba(75, 62, 110, 0.3);
+    transition: transform 0.2s ease;
+
+    &:active {
+      transform: scale(0.95);
+    }
+
+    .plus-box {
+      width: 1.6rem;
+      height: 1.6rem;
+      border: 2px solid #fff;
+      border-radius: 0.4rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      ion-icon {
+        color: #fff;
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
+
+// Ensure the tab bar doesn't cut off the FAB
+:host {
+  display: block;
+  height: 100%;
+}

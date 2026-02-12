@@ -1,0 +1,71 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="goToSplash()" class="header-btn">
+        <ion-icon name="chevron-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title mode="md">Sign In</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <div class="auth-wrapper">
+    <div class="header-text">
+      <h1>Hi, Welcome Back! 👋</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur</p>
+    </div>
+
+    <div class="form-container">
+      <div class="input-group">
+        <ion-label class="field-label">Email Address</ion-label>
+        <div class="custom-input">
+          <ion-input type="email" placeholder="Enter your email address" mode="md"></ion-input>
+        </div>
+      </div>
+
+      <div class="input-group">
+        <ion-label class="field-label">Password</ion-label>
+        <div class="custom-input">
+          <ion-input [type]="showPassword ? 'text' : 'password'" placeholder="Enter your password" mode="md"></ion-input>
+          <ion-icon 
+            [name]="showPassword ? 'eye-off' : 'eye-outline'" 
+            (click)="togglePassword()">
+          </ion-icon>
+        </div>
+      </div>
+
+      <div class="options-row">
+        <div class="remember-me">
+          <ion-checkbox mode="ios"></ion-checkbox>
+          <ion-label>Remember Me</ion-label>
+        </div>
+        <ion-button fill="clear" size="small" class="forgot-btn" routerLink="/forgot-password">Forgot Password</ion-button>
+      </div>
+
+      <ion-button expand="block" (click)="signIn()" class="primary-btn">
+        Sign In
+      </ion-button>
+    </div>
+
+    <div class="divider-section">
+      <p>Don’t have an account? <a (click)="goToSignUp()">Sign Up</a></p>
+      
+      <div class="divider">
+        <span>Or Sign In with</span>
+      </div>
+    </div>
+
+    <div class="social-login">
+      <div class="social-btn">
+        <ion-icon name="logo-google" style="color: #ea4335;"></ion-icon>
+      </div>
+      <div class="social-btn">
+        <ion-icon name="logo-apple" style="color: #000;"></ion-icon>
+      </div>
+      <div class="social-btn">
+        <ion-icon name="logo-facebook" style="color: #1877f2;"></ion-icon>
+      </div>
+    </div>
+  </div>
+</ion-content>

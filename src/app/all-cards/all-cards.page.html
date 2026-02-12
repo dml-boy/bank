@@ -1,0 +1,46 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()" class="header-btn">
+        <ion-icon name="chevron-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>All Cards</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="openCardMenu()" class="header-btn">
+        <ion-icon name="ellipsis-horizontal"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="cards-container">
+    <!-- Card List -->
+    <div class="cards-list">
+      <div class="card-item" *ngFor="let card of cards" [style.background]="card.gradient">
+        <div class="card-header">
+          <span class="card-name">{{ card.name }}</span>
+          <div class="card-logo">VISA</div>
+        </div>
+        
+        <div class="card-balance">
+          <span class="balance-label">Balance</span>
+          <span class="balance-amount">${{ card.balance.toLocaleString('de-DE', {minimumFractionDigits: 2}) }}</span>
+        </div>
+        
+        <div class="card-footer">
+          <span class="card-number">**** {{ card.lastDigits }}</span>
+          <span class="card-expiry">{{ card.expiry }}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add Card Button -->
+    <div class="add-card-section">
+      <ion-button expand="block" fill="outline" class="add-card-btn" (click)="addCard()">
+        Add Card
+      </ion-button>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,105 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()" class="header-btn">
+        <ion-icon name="chevron-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title mode="md">Request Money</ion-title>
+    <ion-buttons slot="end">
+      <div class="header-menu-btn">
+        <ion-icon name="ellipsis-horizontal"></ion-icon>
+      </div>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <div class="form-wrapper">
+    <!-- Payer -->
+    <div class="input-group">
+      <ion-label class="field-label">Payer</ion-label>
+      <div class="custom-input">
+        <ion-input 
+          [(ngModel)]="payerName" 
+          type="text" 
+          placeholder="Name" 
+          mode="md"
+        ></ion-input>
+      </div>
+    </div>
+
+    <!-- Email Address -->
+    <div class="input-group">
+      <ion-label class="field-label">Email Address</ion-label>
+      <div class="custom-input">
+        <ion-input 
+          [(ngModel)]="email" 
+          type="email" 
+          placeholder="Email" 
+          mode="md"
+        ></ion-input>
+      </div>
+    </div>
+
+    <!-- Description -->
+    <div class="input-group">
+      <ion-label class="field-label">Description</ion-label>
+      <div class="custom-input">
+        <ion-input 
+          [(ngModel)]="description" 
+          type="text" 
+          placeholder="Detail description" 
+          mode="md"
+        ></ion-input>
+      </div>
+    </div>
+
+    <!-- Monthly Due By -->
+    <div class="input-group">
+      <ion-label class="field-label">Monthly Due By</ion-label>
+      <div class="custom-input date-field" (click)="toggleDatePicker()">
+        <ion-input 
+          [(ngModel)]="dueDate" 
+          type="text" 
+          placeholder="Select the date" 
+          mode="md"
+          readonly
+        ></ion-input>
+        <ion-icon name="calendar-outline" class="suffix-icon"></ion-icon>
+      </div>
+      
+      <!-- Date Picker Popover -->
+      <div class="date-picker-container" *ngIf="showDatePicker">
+        <ion-datetime 
+          [(ngModel)]="dueDate"
+          (ionChange)="onDateChange($event)"
+          presentation="date"
+          [showDefaultButtons]="true"
+        ></ion-datetime>
+      </div>
+    </div>
+
+    <!-- Enter The Amount -->
+    <div class="input-group">
+      <ion-label class="field-label">Enter The Amount</ion-label>
+      <div class="amount-field-wrapper">
+        <div class="currency-selector">
+          <div class="currency-chip">
+            <span class="symbol">$</span>
+            <span class="code">{{ currency }}</span>
+            <ion-icon name="chevron-down-outline"></ion-icon>
+          </div>
+        </div>
+        <div class="amount-entry">$154,42</div>
+      </div>
+    </div>
+
+    <!-- Request Money Button -->
+    <div class="action-section">
+      <ion-button expand="block" (click)="requestMoney()" class="primary-btn">
+        Request Money
+      </ion-button>
+    </div>
+  </div>
+</ion-content>

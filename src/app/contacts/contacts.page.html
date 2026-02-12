@@ -1,0 +1,57 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()" class="header-btn">
+        <ion-icon name="chevron-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title mode="md">Contacts</ion-title>
+    <ion-buttons slot="end">
+      <div class="header-menu-btn">
+        <ion-icon name="ellipsis-horizontal"></ion-icon>
+      </div>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <!-- Search Bar -->
+  <div class="search-container">
+    <ion-searchbar 
+      [(ngModel)]="searchQuery" 
+      (ionInput)="onSearchChange()"
+      placeholder="Search contact..." 
+      mode="ios"
+      class="custom-search"
+    ></ion-searchbar>
+  </div>
+
+  <!-- Add Contact Button -->
+  <div class="add-contact-btn">
+    <div class="add-icon">
+      <ion-icon name="add"></ion-icon>
+    </div>
+    <span>Add Contact</span>
+  </div>
+
+  <!-- Grouped Contacts List -->
+  <div class="contacts-list">
+    <div *ngFor="let letter of groupedContacts | keyvalue" class="contact-group">
+      <div class="group-header">{{ letter.key }}</div>
+      <ion-list lines="none">
+        <ion-item *ngFor="let contact of letter.value" (click)="selectContact(contact)" button detail="false">
+          <ion-avatar slot="start">
+            <img [src]="contact.image" [alt]="contact.name" />
+            <div class="verified-badge" *ngIf="contact.verified">
+              <ion-icon name="checkmark"></ion-icon>
+            </div>
+          </ion-avatar>
+          <ion-label>
+            <h2>{{ contact.name }}</h2>
+            <p>{{ contact.bank }} • {{ contact.account }}</p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </div>
+  </div>
+</ion-content>

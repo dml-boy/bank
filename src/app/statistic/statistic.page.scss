@@ -1,20 +1,17 @@
+@use "../../theme/shared.scss" as shared;
+
 ion-header {
+  @include shared.page-header;
   ion-toolbar {
     --background: #fdfdfd;
-    --padding-top: 1rem;
-    --padding-bottom: 0.5rem;
-    padding: 0 1rem;
-
     ion-title {
-      font-weight: 700;
       color: #1c1c1e;
-      font-size: 1.3rem;
     }
-
   }
 }
 
 ion-content {
+  @include shared.page-content;
   --background: #fdfdfd;
 }
 

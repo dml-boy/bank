@@ -1,0 +1,38 @@
+// Shared styles and mixins for KrasPay
+
+@mixin page-header {
+  ion-toolbar {
+    --background: #fff;
+    --padding-top: 1.5rem;
+    --padding-bottom: 0.5rem;
+    padding: 0 1rem;
+
+    ion-title {
+      font-weight: 700;
+      color: #1e293b;
+      font-size: 1.3rem;
+    }
+  }
+}
+
+@mixin page-content {
+  --background: #fff;
+}
+
+@mixin auth-header-text {
+  margin-bottom: 2.5rem;
+  
+  h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.02rem;
+  }
+  
+  p {
+    color: #94a3b8;
+    font-size: 1.1rem;
+    line-height: 1.5;
+  }
+}
